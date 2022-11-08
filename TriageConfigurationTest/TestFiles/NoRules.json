@@ -1,0 +1,28 @@
+{
+  "customerName": "Test Customer",
+  "Description": "Test Customer Description",
+  "Rulesets": [
+    {
+      "Description": "Ruleset 1",
+      "Results": [
+        {
+          "Name": "TotalLossAssessment",
+          "Description": "Based on the amount of damage, it can be assumed to be a total loss.",
+          "OrderNumber": 1,
+          "repairCostsVisible": true,
+          "residualValueVisible": true,
+          "replacementValueVisible": true
+        }
+      ],
+      "OrderNumber": 1
+    }
+  ],
+  "DefaultResult": {
+    "Name": "DefaultResult",
+    "Description": "This case can be processed as Default Result.",
+    "OrderNumber": 1,
+    "repairCostsVisible": false,
+    "residualValueVisible": false,
+    "replacementValueVisible": false
+  }
+}

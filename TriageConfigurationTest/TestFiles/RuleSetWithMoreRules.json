@@ -1,0 +1,52 @@
+{
+  "customerName": "Test Customer",
+  "Description": "Test Customer Description",
+  "Rulesets": [
+    {
+      "Description": "Ruleset 1",
+      "Rules": [
+        {
+          "Description": "Is it a car",
+          "Criteria": "IsCar",
+          "Type": "Boolean",
+          "BooleanStateValue": true,
+          "OrderNumber": 1
+        },
+        {
+          "Description": "BurningExploFlooding",
+          "Criteria": "DamageType",
+          "Type": "RegEx",
+          "RegEx": "Brand|Explo|Ueber",
+          "OrderNumber": 1
+        },
+        {
+          "Description": "Number of damaged parts",
+          "Criteria": "CountDamagedParts",
+          "Type": "Range",
+          "RangeMinValue": 1,
+          "RangeMaxValue": 2,
+          "OrderNumber": 3
+        }
+      ],
+      "Results": [
+        {
+          "Name": "RequestInformation",
+          "Description": "Based on the details, it can be assumed to be request information.",
+          "OrderNumber": 1,
+          "repairCostsVisible": true,
+          "residualValueVisible": true,
+          "replacementValueVisible": false
+        }
+      ],
+      "OrderNumber": 1
+    }
+  ],
+  "DefaultResult": {
+    "Name": "DefaultResult",
+    "Description": "This case can be processed as Default Result.",
+    "OrderNumber": 1,
+    "repairCostsVisible": false,
+    "residualValueVisible": false,
+    "replacementValueVisible": false
+  }
+}

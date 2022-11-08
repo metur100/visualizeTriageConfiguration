@@ -1,0 +1,98 @@
+{
+  "customerName": "Test Customer",
+  "Description": "Test Customer Description",
+  "Rulesets": [
+    {
+      "Description": "Ruleset 1",
+      "Rules": [
+        {
+          "Description": "Total loss",
+          "Criteria": "TotalLoss",
+          "Type": "Boolean",
+          "BooleanStateValue": true,
+          "OrderNumber": 1
+        }
+      ],
+      "Results": [
+        {
+          "Name": "TotalLossAssessment",
+          "Description": "Based on the amount of damage, it can be assumed to be a total loss.",
+          "OrderNumber": 1,
+          "repairCostsVisible": true,
+          "residualValueVisible": true,
+          "replacementValueVisible": true
+        }
+      ],
+      "OrderNumber": 1
+    },
+    {
+      "Description": "Ruleset 2",
+      "Rules": [
+        {
+          "Description": "Is it a car",
+          "Criteria": "IsCar",
+          "Type": "Boolean",
+          "BooleanStateValue": true,
+          "OrderNumber": 1
+        },
+        {
+          "Description": "Complex damage",
+          "Criteria": "IsComplexDamage",
+          "Type": "Boolean",
+          "BooleanStateValue": false,
+          "OrderNumber": 2
+        },
+        {
+          "Description": "Number of damaged parts",
+          "Criteria": "CountDamagedParts",
+          "Type": "Range",
+          "RangeMinValue": 1,
+          "RangeMaxValue": 2,
+          "OrderNumber": 3
+        }
+      ],
+      "Results": [
+        {
+          "Name": "OnSiteDamageAssessment",
+          "Description": "Regarding the damage to your vehicle, unfortunately we need more information.",
+          "OrderNumber": 1,
+          "repairCostsVisible": false,
+          "residualValueVisible": false,
+          "replacementValueVisible": false
+        }
+      ],
+      "OrderNumber": 2
+    },
+    {
+      "Description": "Ruleset 3",
+      "Rules": [
+        {
+          "Description": "BurningExploFlooding",
+          "Criteria": "DamageType",
+          "Type": "RegEx",
+          "RegEx": "Brand|Explo|Ueber",
+          "OrderNumber": 1
+        }
+      ],
+      "Results": [
+        {
+          "Name": "TotalLossAssessment",
+          "Description": "Based on the amount of damage, it can be assumed to be a total loss.",
+          "OrderNumber": 1,
+          "repairCostsVisible": true,
+          "residualValueVisible": true,
+          "replacementValueVisible": true
+        }
+      ],
+      "OrderNumber": 3
+    }
+  ],
+  "DefaultResult": {
+    "Name": "DefaultResult",
+    "Description": "This case can be processed as Default Result.",
+    "OrderNumber": 1,
+    "repairCostsVisible": false,
+    "residualValueVisible": false,
+    "replacementValueVisible": false
+  }
+}

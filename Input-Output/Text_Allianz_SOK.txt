@@ -1,0 +1,96 @@
+Customer name: Allianz SOK 
+Description:  Allianz SOK Configuration for VDDS V3.0 
+
+Description: Ruleset 1
+ Criteria: TotalLoss = True
+Result: TotalLossAssessment 
+  Description:  Based on the amount of damage, it can be assumed to be a total loss. I would be happy to make an appointment with our expert to verify this. 
+  RepairCostsVisible:  True
+  ResidualValueVisible:  True
+  ReplacementValueVisible:  True
+  Action: 
+
+Description: Ruleset 2
+ Criteria: IsCar = False
+Result: OnSiteDamageAssessment 
+  Description:  Regarding the damage to your vehicle, unfortunately we need more information. For this purpose, I would like to involve one of our experts who will assess your vehicle. I would be happy to arrange an appointment for you directly. 
+  RepairCostsVisible:  False
+  ResidualValueVisible:  False
+  ReplacementValueVisible:  False
+  Action: 
+
+Description: Ruleset 3
+ Criteria: DamageType = Brand|Explo|Ueber
+Result: TotalLossAssessment 
+  Description:  Based on the amount of damage, it can be assumed to be a total loss. I would be happy to make an appointment with our expert to verify this. 
+  RepairCostsVisible:  True
+  ResidualValueVisible:  True
+  ReplacementValueVisible:  True
+  Action: 
+
+Description: Ruleset 4
+ Criteria: DamageType = Blitz
+Result: OnSiteDamageAssessment 
+  Description:  Regarding the damage to your vehicle, unfortunately we need more information. For this purpose, I would like to involve one of our experts who will assess your vehicle. I would be happy to arrange an appointment for you directly. 
+  RepairCostsVisible:  False
+  ResidualValueVisible:  False
+  ReplacementValueVisible:  False
+  Action: 
+
+Description: Ruleset 5
+ Criteria: IsFlatPayout = True
+Result: FlatPayout 
+  Description:  Most customers would decide for a cash settlement in such a case. In this case, you will receive a payout instead of the repair. 
+  RepairCostsVisible:  True
+  ResidualValueVisible:  False
+  ReplacementValueVisible:  False
+  Action: 
+
+Description: Ruleset 6
+ Criteria: IsComplexDamage = True
+Result: LiveStreamCalculation 
+  Description:  This case can be processed as Live Stream Calculation. I would be happy to arrange an appointment for you directly. 
+  RepairCostsVisible:  False
+  ResidualValueVisible:  False
+  ReplacementValueVisible:  False
+  Action: 
+
+Description: Ruleset 7
+ Criteria: IsCar = True
+ Criteria: IsComplexDamage = False
+ Criteria: CountDamagedParts is inbetween 0 und 0
+Result: RequestInformation 
+  Description:  This case can not been processed, we would suggest a follow-up processing. 
+  RepairCostsVisible:  False
+  ResidualValueVisible:  False
+  ReplacementValueVisible:  False
+  Action: 
+
+Description: Ruleset 8
+ Criteria: IsCar = True
+ Criteria: IsComplexDamage = False
+ Criteria: CountDamagedParts is inbetween 1 und 4
+Result: PhotoCalculation 
+  Description:  This case can be processed as a photo assessment. I would be happy to arrange an appointment for you directly. 
+  RepairCostsVisible:  True
+  ResidualValueVisible:  False
+  ReplacementValueVisible:  False
+  Action: 
+
+Description: Ruleset 9
+ Criteria: IsCar = True
+ Criteria: IsComplexDamage = False
+ Criteria: CountDamagedParts is inbetween 5 und 100
+Result: LiveStreamCalculation 
+  Description:  This case can be processed as Live Stream Calculation. I would be happy to arrange an appointment for you directly. 
+  RepairCostsVisible:  False
+  ResidualValueVisible:  False
+  ReplacementValueVisible:  False
+  Action: 
+
+Result: LiveStreamCalculation 
+  Description:  This case can be processed as Live Stream Calculation. I would be happy to arrange an appointment for you directly. 
+  RepairCostsVisible:  False
+  ResidualValueVisible:  False
+  ReplacementValueVisible:  False
+

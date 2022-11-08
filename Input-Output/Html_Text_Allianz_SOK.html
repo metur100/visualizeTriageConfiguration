@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<div class="CustomerAndDesc">
+			<div align="center">
+				<h1>Customer name: Allianz SOK</h1>
+				<h1>Description: Allianz SOK Configuration for VDDS V3.0</h1>
+			</div>
+		</div>
+		<div class="Rule">
+			<h2>Ruleset 1</h2>
+			<h4>Rules:
+			</h4>
+		</div>
+		<ul>
+			<li>Criteria: TotalLoss is True</li>
+		</ul>
+		<h4>Result:
+		</h4>
+		<ul>
+			<li>Name: TotalLossAssessment</li>
+			<li>Description: Based on the amount of damage, it can be assumed to be a total loss. I would be happy to make an appointment with our expert to verify this.</li>
+			<li>RepairCostsVisible: True</li>
+			<li>ResidualValueVisible: True</li>
+			<li>ReplacementValueVisible: True</li>
+			<p></p>
+		</ul>
+		<div class="Rule">
+			<h2>Ruleset 2</h2>
+			<h4>Rules:
+			</h4>
+		</div>
+		<ul>
+			<li>Criteria: IsCar is False</li>
+		</ul>
+		<h4>Result:
+		</h4>
+		<ul>
+			<li>Name: OnSiteDamageAssessment</li>
+			<li>Description: Regarding the damage to your vehicle, unfortunately we need more information. For this purpose, I would like to involve one of our experts who will assess your vehicle. I would be happy to arrange an appointment for you directly.</li>
+			<li>RepairCostsVisible: False</li>
+			<li>ResidualValueVisible: False</li>
+			<li>ReplacementValueVisible: False</li>
+			<p></p>
+		</ul>
+		<div class="Rule">
+			<h2>Ruleset 3</h2>
+			<h4>Rules:
+			</h4>
+		</div>
+		<ul>
+			<li>Criteria: DamageType is Brand|Explo|Ueber</li>
+		</ul>
+		<h4>Result:
+		</h4>
+		<ul>
+			<li>Name: TotalLossAssessment</li>
+			<li>Description: Based on the amount of damage, it can be assumed to be a total loss. I would be happy to make an appointment with our expert to verify this.</li>
+			<li>RepairCostsVisible: True</li>
+			<li>ResidualValueVisible: True</li>
+			<li>ReplacementValueVisible: True</li>
+			<p></p>
+		</ul>
+		<div class="Rule">
+			<h2>Ruleset 4</h2>
+			<h4>Rules:
+			</h4>
+		</div>
+		<ul>
+			<li>Criteria: DamageType is Blitz</li>
+		</ul>
+		<h4>Result:
+		</h4>
+		<ul>
+			<li>Name: OnSiteDamageAssessment</li>
+			<li>Description: Regarding the damage to your vehicle, unfortunately we need more information. For this purpose, I would like to involve one of our experts who will assess your vehicle. I would be happy to arrange an appointment for you directly.</li>
+			<li>RepairCostsVisible: False</li>
+			<li>ResidualValueVisible: False</li>
+			<li>ReplacementValueVisible: False</li>
+			<p></p>
+		</ul>
+		<div class="Rule">
+			<h2>Ruleset 5</h2>
+			<h4>Rules:
+			</h4>
+		</div>
+		<ul>
+			<li>Criteria: IsFlatPayout is True</li>
+		</ul>
+		<h4>Result:
+		</h4>
+		<ul>
+			<li>Name: FlatPayout</li>
+			<li>Description: Most customers would decide for a cash settlement in such a case. In this case, you will receive a payout instead of the repair.</li>
+			<li>RepairCostsVisible: True</li>
+			<li>ResidualValueVisible: False</li>
+			<li>ReplacementValueVisible: False</li>
+			<p></p>
+		</ul>
+		<div class="Rule">
+			<h2>Ruleset 6</h2>
+			<h4>Rules:
+			</h4>
+		</div>
+		<ul>
+			<li>Criteria: IsComplexDamage is True</li>
+		</ul>
+		<h4>Result:
+		</h4>
+		<ul>
+			<li>Name: LiveStreamCalculation</li>
+			<li>Description: This case can be processed as Live Stream Calculation. I would be happy to arrange an appointment for you directly.</li>
+			<li>RepairCostsVisible: False</li>
+			<li>ResidualValueVisible: False</li>
+			<li>ReplacementValueVisible: False</li>
+			<p></p>
+		</ul>
+		<div class="Rule">
+			<h2>Ruleset 7</h2>
+			<h4>Rules:
+			</h4>
+		</div>
+		<ul>
+			<li>Criteria: IsCar is True</li>
+		</ul>
+		<ul>
+			<li>Criteria: IsComplexDamage is False</li>
+		</ul>
+		<ul>
+			<li>Criteria: CountDamagedParts is between 0 and 0</li>
+		</ul>
+		<h4>Result:
+		</h4>
+		<ul>
+			<li>Name: RequestInformation</li>
+			<li>Description: This case can not been processed, we would suggest a follow-up processing.</li>
+			<li>RepairCostsVisible: False</li>
+			<li>ResidualValueVisible: False</li>
+			<li>ReplacementValueVisible: False</li>
+			<p></p>
+		</ul>
+		<div class="Rule">
+			<h2>Ruleset 8</h2>
+			<h4>Rules:
+			</h4>
+		</div>
+		<ul>
+			<li>Criteria: IsCar is True</li>
+		</ul>
+		<ul>
+			<li>Criteria: IsComplexDamage is False</li>
+		</ul>
+		<ul>
+			<li>Criteria: CountDamagedParts is between 1 and 4</li>
+		</ul>
+		<h4>Result:
+		</h4>
+		<ul>
+			<li>Name: PhotoCalculation</li>
+			<li>Description: This case can be processed as a photo assessment. I would be happy to arrange an appointment for you directly.</li>
+			<li>RepairCostsVisible: True</li>
+			<li>ResidualValueVisible: False</li>
+			<li>ReplacementValueVisible: False</li>
+			<p></p>
+		</ul>
+		<div class="Rule">
+			<h2>Ruleset 9</h2>
+			<h4>Rules:
+			</h4>
+		</div>
+		<ul>
+			<li>Criteria: IsCar is True</li>
+		</ul>
+		<ul>
+			<li>Criteria: IsComplexDamage is False</li>
+		</ul>
+		<ul>
+			<li>Criteria: CountDamagedParts is between 5 and 100</li>
+		</ul>
+		<h4>Result:
+		</h4>
+		<ul>
+			<li>Name: LiveStreamCalculation</li>
+			<li>Description: This case can be processed as Live Stream Calculation. I would be happy to arrange an appointment for you directly.</li>
+			<li>RepairCostsVisible: False</li>
+			<li>ResidualValueVisible: False</li>
+			<li>ReplacementValueVisible: False</li>
+			<p></p>
+		</ul>
+		<h3>Default Result</h3>
+		<ul>
+			<li>Name: LiveStreamCalculation</li>
+			<li>Description: This case can be processed as Live Stream Calculation. I would be happy to arrange an appointment for you directly.</li>
+			<li>RepairCostsVisible: False</li>
+			<li>ResidualValueVisible: False</li>
+			<li>ReplacementValueVisible: False</li>
+		</ul>
+	</body>
+</html>

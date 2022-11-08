@@ -1,0 +1,13 @@
+{
+  "customerName": "Test Customer",
+  "Description": "Test Customer Description",
+  "Rulesets": [ {} ],
+  "DefaultResult": {
+    "Name": "DefaultResult",
+    "Description": "This case can be processed as Default Result.",
+    "OrderNumber": 1,
+    "repairCostsVisible": false,
+    "residualValueVisible": false,
+    "replacementValueVisible": false
+  }
+}

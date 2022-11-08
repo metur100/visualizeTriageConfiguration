@@ -1,0 +1,267 @@
+{
+  "customerName": "Allianz SOK",
+  "Description": "Allianz SOK Configuration for VDDS V3.0",
+  "Rulesets": [
+    {
+      "Description": "Ruleset 1",
+      "Rules": [
+        {
+          "Description": "Total loss",
+          "Criteria": "TotalLoss",
+          "Type": "Boolean",
+          "BooleanStateValue": true,
+          "OrderNumber": 1
+        }
+      ],
+      "Results": [
+        {
+          "Name": "TotalLossAssessment",
+          "Description": "Based on the amount of damage, it can be assumed to be a total loss. I would be happy to make an appointment with our expert to verify this.",
+          "OrderNumber": 1,
+          "repairCostsVisible": true,
+          "residualValueVisible": true,
+          "replacementValueVisible": true
+        }
+      ],
+      "OrderNumber": 1
+    },
+    {
+      "Description": "Ruleset 2",
+      "Rules": [
+        {
+          "Description": "Is it a car",
+          "Criteria": "IsCar",
+          "Type": "Boolean",
+          "BooleanStateValue": false,
+          "OrderNumber": 1
+        }
+      ],
+      "Results": [
+        {
+          "Name": "OnSiteDamageAssessment",
+          "Description": "Regarding the damage to your vehicle, unfortunately we need more information. For this purpose, I would like to involve one of our experts who will assess your vehicle. I would be happy to arrange an appointment for you directly.",
+          "OrderNumber": 1,
+          "repairCostsVisible": false,
+          "residualValueVisible": false,
+          "replacementValueVisible": false
+        }
+      ],
+      "OrderNumber": 2
+    },
+    {
+      "Description": "Ruleset 3",
+      "Rules": [
+        {
+          "Description": "BurningExploFlooding",
+          "Criteria": "DamageType",
+          "Type": "RegEx",
+          "RegEx": "Brand|Explo|Ueber",
+          "OrderNumber": 1
+        }
+      ],
+      "Results": [
+        {
+          "Name": "TotalLossAssessment",
+          "Description": "Based on the amount of damage, it can be assumed to be a total loss. I would be happy to make an appointment with our expert to verify this.",
+          "OrderNumber": 1,
+          "repairCostsVisible": true,
+          "residualValueVisible": true,
+          "replacementValueVisible": true
+        }
+      ],
+      "OrderNumber": 3
+    },
+    {
+      "Description": "Ruleset 4",
+      "Rules": [
+        {
+          "Description": "Lightning",
+          "Criteria": "DamageType",
+          "Type": "RegEx",
+          "RegEx": "Blitz",
+          "OrderNumber": 1
+        }
+      ],
+      "Results": [
+        {
+          "Name": "OnSiteDamageAssessment",
+          "Description": "Regarding the damage to your vehicle, unfortunately we need more information. For this purpose, I would like to involve one of our experts who will assess your vehicle. I would be happy to arrange an appointment for you directly.",
+          "OrderNumber": 1,
+          "repairCostsVisible": false,
+          "residualValueVisible": false,
+          "replacementValueVisible": false
+        }
+      ],
+      "OrderNumber": 4
+    },
+    {
+      "Description": "Ruleset 5",
+      "Rules": [
+        {
+          "Description": "Flat Payout",
+          "Criteria": "IsFlatPayout",
+          "Type": "Boolean",
+          "BooleanStateValue": true,
+          "OrderNumber": 1
+        }
+      ],
+      "Results": [
+        {
+          "Name": "FlatPayout",
+          "Description": "Most customers would decide for a cash settlement in such a case. In this case, you will receive a payout instead of the repair.",
+          "OrderNumber": 1,
+          "repairCostsVisible": true,
+          "residualValueVisible": false,
+          "replacementValueVisible": false
+        }
+      ],
+      "OrderNumber": 5
+    },
+    {
+      "Description": "Ruleset 6",
+      "Rules": [
+        {
+          "Description": "Complex damage",
+          "Criteria": "IsComplexDamage",
+          "Type": "Boolean",
+          "BooleanStateValue": true,
+          "OrderNumber": 1
+        }
+      ],
+      "Results": [
+        {
+          "Name": "LiveStreamCalculation",
+          "Description": "This case can be processed as Live Stream Calculation. I would be happy to arrange an appointment for you directly.",
+          "OrderNumber": 1,
+          "repairCostsVisible": false,
+          "residualValueVisible": false,
+          "replacementValueVisible": false
+        }
+      ],
+      "OrderNumber": 6
+    },
+    {
+      "Description": "Ruleset 7",
+      "Rules": [
+        {
+          "Description": "Is it a car",
+          "Criteria": "IsCar",
+          "Type": "Boolean",
+          "BooleanStateValue": true,
+          "OrderNumber": 1
+        },
+        {
+          "Description": "Complex damage",
+          "Criteria": "IsComplexDamage",
+          "Type": "Boolean",
+          "BooleanStateValue": false,
+          "OrderNumber": 2
+        },
+        {
+          "Description": "Number of damaged parts",
+          "Criteria": "CountDamagedParts",
+          "Type": "Range",
+          "RangeMinValue": 0,
+          "RangeMaxValue": 0,
+          "OrderNumber": 3
+        }
+      ],
+      "Results": [
+        {
+          "Name": "RequestInformation",
+          "Description": "This case can not been processed, we would suggest a follow-up processing.",
+          "OrderNumber": 1,
+          "repairCostsVisible": false,
+          "residualValueVisible": false,
+          "replacementValueVisible": false
+        }
+      ],
+      "OrderNumber": 7
+    },
+    {
+      "Description": "Ruleset 8",
+      "Rules": [
+        {
+          "Description": "Is it a car",
+          "Criteria": "IsCar",
+          "Type": "Boolean",
+          "BooleanStateValue": true,
+          "OrderNumber": 1
+        },
+        {
+          "Description": "Complex damage",
+          "Criteria": "IsComplexDamage",
+          "Type": "Boolean",
+          "BooleanStateValue": false,
+          "OrderNumber": 2
+        },
+        {
+          "Description": "Number of damaged parts",
+          "Criteria": "CountDamagedParts",
+          "Type": "Range",
+          "RangeMinValue": 1,
+          "RangeMaxValue": 4,
+          "OrderNumber": 3
+        }
+      ],
+      "Results": [
+        {
+          "Name": "PhotoCalculation",
+          "Description": "This case can be processed as a photo assessment. I would be happy to arrange an appointment for you directly.",
+          "OrderNumber": 1,
+          "repairCostsVisible": true,
+          "residualValueVisible": false,
+          "replacementValueVisible": false
+        }
+      ],
+      "OrderNumber": 8
+    },
+    {
+      "Description": "Ruleset 9",
+      "Rules": [
+        {
+          "Description": "Is it a car",
+          "Criteria": "IsCar",
+          "Type": "Boolean",
+          "BooleanStateValue": true,
+          "OrderNumber": 1
+        },
+        {
+          "Description": "Complex damage",
+          "Criteria": "IsComplexDamage",
+          "Type": "Boolean",
+          "BooleanStateValue": false,
+          "OrderNumber": 2
+        },
+        {
+          "Description": "Number of damaged parts",
+          "Criteria": "CountDamagedParts",
+          "Type": "Range",
+          "RangeMinValue": 5,
+          "RangeMaxValue": 100,
+          "OrderNumber": 3
+        }
+      ],
+      "Results": [
+        {
+          "ID": 0,
+          "Name": "LiveStreamCalculation",
+          "Description": "This case can be processed as Live Stream Calculation. I would be happy to arrange an appointment for you directly.",
+          "OrderNumber": 1,
+          "repairCostsVisible": false,
+          "residualValueVisible": false,
+          "replacementValueVisible": false
+        }
+      ],
+      "OrderNumber": 9
+    }
+  ],
+  "DefaultResult": {
+    "Name": "LiveStreamCalculation",
+    "Description": "This case can be processed as Live Stream Calculation. I would be happy to arrange an appointment for you directly.",
+    "OrderNumber": 1,
+    "repairCostsVisible": false,
+    "residualValueVisible": false,
+    "replacementValueVisible": false
+  }
+}
